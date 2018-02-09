@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI", "DI\DI.csproj", "{EBE0DF8D-70C3-4ED2-BA6B-C02FD4C48351}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDI", "WebDI\WebDI.csproj", "{68EF4B97-DEAB-421B-90CE-E00ED71AEAEB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBE0DF8D-70C3-4ED2-BA6B-C02FD4C48351}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBE0DF8D-70C3-4ED2-BA6B-C02FD4C48351}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBE0DF8D-70C3-4ED2-BA6B-C02FD4C48351}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBE0DF8D-70C3-4ED2-BA6B-C02FD4C48351}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68EF4B97-DEAB-421B-90CE-E00ED71AEAEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68EF4B97-DEAB-421B-90CE-E00ED71AEAEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68EF4B97-DEAB-421B-90CE-E00ED71AEAEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68EF4B97-DEAB-421B-90CE-E00ED71AEAEB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {525DCE8C-A825-466D-AD15-0D27DD4153C2}
+	EndGlobalSection
+EndGlobal

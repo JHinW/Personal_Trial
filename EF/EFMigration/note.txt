@@ -1,0 +1,27 @@
+﻿https://docs.microsoft.com/en-us/ef/core/get-started/netcore/new-db-sqlite
+https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/migrations
+
+// implement left join using entityFramework
+https://stackoverflow.com/questions/38813010/how-to-build-several-left-join-query-in-entity-framework-core
+
+// transaction
+https://docs.microsoft.com/en-us/ef/core/saving/transactions
+
+//Distributed transaction 
+
+https://stackoverflow.com/questions/4217270/what-is-a-distributed-transaction
+
+
+entity framework 
+//https://docs.microsoft.com/en-us/ef/core/miscellaneous/logging
+
+
+
+ling to sql 
+https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/sql/linq/getting-started
+
+dotnet ef migrations remove
+dotnet ef migrations add InitialCreate
+dotnet ef database drop
+dotnet ef database update
+

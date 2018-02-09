@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ApplicationManifest xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ApplicationTypeName="OpgSFdemoType" ApplicationTypeVersion="1.0.0" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="OpgWebApi_InstanceCount" DefaultValue="-1" />
+    <Parameter Name="CommandActorService_PartitionCount" DefaultValue="10" />
+    <Parameter Name="CommandActorService_MinReplicaSetSize" DefaultValue="3" />
+    <Parameter Name="CommandActorService_TargetReplicaSetSize" DefaultValue="3" />
+  </Parameters>
+  <!-- Import the ServiceManifest from the ServicePackage. The ServiceManifestName and ServiceManifestVersion 
+       should match the Name and Version attributes of the ServiceManifest element defined in the 
+       ServiceManifest.xml file. -->
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="CommandActorPkg" ServiceManifestVersion="1.0.0" />
+  </ServiceManifestImport>
+  <ServiceManifestImport>
+    <ServiceManifestRef ServiceManifestName="OpgWebApiPkg" ServiceManifestVersion="1.0.0" />
+    <ConfigOverrides />
+  </ServiceManifestImport>
+  <DefaultServices>
+    <!-- The section below creates instances of service types, when an instance of this 
+         application type is created. You can also create one or more instances of service type using the 
+         ServiceFabric PowerShell module.
+         
+         The attribute ServiceTypeName below must match the name defined in the imported ServiceManifest.xml file. -->
+    <Service Name="OpgWebApi">
+      <StatelessService ServiceTypeName="OpgWebApiType" InstanceCount="[OpgWebApi_InstanceCount]">
+        <SingletonPartition />
+      </StatelessService>
+    </Service>
+    <Service Name="CommandActorService" GeneratedIdRef="1152d49e-676e-48cf-be4a-15822a8d4614|Persisted">
+      <StatefulService ServiceTypeName="CommandActorServiceType" TargetReplicaSetSize="[CommandActorService_TargetReplicaSetSize]" MinReplicaSetSize="[CommandActorService_MinReplicaSetSize]">
+        <UniformInt64Partition PartitionCount="[CommandActorService_PartitionCount]" LowKey="-9223372036854775808" HighKey="9223372036854775807" />
+      </StatefulService>
+    </Service>
+  </DefaultServices>
+</ApplicationManifest>
