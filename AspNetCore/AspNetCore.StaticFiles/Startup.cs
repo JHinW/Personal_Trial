@@ -1,20 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-
-
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.DependencyInjection;
-
-using AspNetCore.Extensions;
 using Microsoft.Extensions.FileProviders;
-using System.IO;
 
-namespace AspNetCore
+namespace AspNetCore.StaticFiles
 {
     public class Startup
     {
@@ -32,7 +27,7 @@ namespace AspNetCore
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseCustomizedRule();
+            app.UseStaticFiles();
 
 
             app.UseStaticFiles(new StaticFileOptions
@@ -40,9 +35,6 @@ namespace AspNetCore
                 FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "MyStaticFiles")),
                 RequestPath = "/StaticFiles"
             });
-
-            app.UseDefaultFiles();
-            app.UseStaticFiles();
         }
     }
 }
