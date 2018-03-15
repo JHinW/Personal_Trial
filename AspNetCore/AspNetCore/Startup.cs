@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
+
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.DependencyInjection;
+
+using AspNetCore.Extensions;
 
 namespace AspNetCore
 {
@@ -26,12 +30,7 @@ namespace AspNetCore
                 app.UseDeveloperExceptionPage();
             }
 
-
-            var options = new RewriteOptions()
-        //.AddRedirect("heroes/(.*)", "index.html")
-        .AddRewrite(@"^heroes(\\/.*)?", "index.html", skipRemainingRules: true);
-
-            app.UseRewriter(options);
+            app.UseCustomizedRule();
 
             app.UseDefaultFiles();
             app.UseStaticFiles();
